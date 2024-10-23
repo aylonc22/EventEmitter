@@ -20,13 +20,13 @@ class EventEmitter{
         }
     }
 
-    //Unsubscripe from an event
+    //Unsubscribe from an event
     off(event,listener){
         if(!this.events[event])return;
         this.events[event] = this.events[event].filter(l=>l!==listener);
     }
 
-    //Subscrive to an event only once
+    //Subscribe to an event only once
     once(event,listener){
         const onceWrapper = (...args)=>{
             listener(...args);
