@@ -14,7 +14,7 @@ class EventEmitter{
     //Emit an event
     emit(event,...args){
         if(this.events[event]){
-            this.events[event].forEach(listener => {
+            this.events[event].forEach(listener => {               
                 listener(...args)
             });
         }
@@ -35,3 +35,5 @@ class EventEmitter{
         this.on(event,onceWrapper);
     }
 }
+
+module.exports = EventEmitter;
